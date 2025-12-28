@@ -1,0 +1,140 @@
+name: Publish Packages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'packages/types/**'
+      - 'packages/parser/**'
+      - 'packages/client/**'
+      - 'packages/slidev/**'
+      - 'packages/hedgedoc-markdown-it-plugins-patched/**'
+
+jobs:
+  check-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      types: ${{ steps.filter.outputs.types }}
+      parser: ${{ steps.filter.outputs.parser }}
+      client: ${{ steps.filter.outputs.client }}
+      cli: ${{ steps.filter.outputs.cli }}
+      hedgedoc: ${{ steps.filter.outputs.hedgedoc }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            types:
+              - 'packages/types/**'
+            parser:
+              - 'packages/parser/**'
+            client:
+              - 'packages/client/**'
+            cli:
+              - 'packages/slidev/**'
+            hedgedoc:
+              - 'packages/hedgedoc-markdown-it-plugins-patched/**'
+
+  publish-types:
+    needs: check-changes
+    if: needs.check-changes.outputs.types == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build types
+        run: pnpm --filter @dongtran/slidev-types build
+      - name: Publish types
+        run: pnpm --filter @dongtran/slidev-types publish --access public --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  publish-parser:
+    needs: [check-changes, publish-types]
+    if: always() && needs.check-changes.outputs.parser == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build parser
+        run: pnpm --filter @dongtran/slidev-parser build
+      - name: Publish parser
+        run: pnpm --filter @dongtran/slidev-parser publish --access public --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  publish-client:
+    needs: [check-changes, publish-types, publish-parser]
+    if: always() && needs.check-changes.outputs.client == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - name: Install dependencies
+        run: pnpm install
+      - name: Publish client
+        run: pnpm --filter @dongtran/slidev-client publish --access public --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  publish-hedgedoc:
+    needs: check-changes
+    if: needs.check-changes.outputs.hedgedoc == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Publish hedgedoc
+        working-directory: packages/hedgedoc-markdown-it-plugins-patched
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  publish-cli:
+    needs: [check-changes, publish-types, publish-parser, publish-client, publish-hedgedoc]
+    if: always() && needs.check-changes.outputs.cli == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build CLI
+        run: pnpm --filter @dongtran/slidev-cli build
+      - name: Publish CLI
+        run: pnpm --filter @dongtran/slidev-cli publish --access public --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

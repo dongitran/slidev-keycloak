@@ -1,6 +1,6 @@
 {
   "name": "@dongtran/slidev-parser",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Markdown parser for Slidev with Keycloak support",
   "author": "Anthony Fu <anthonyfu117@hotmail.com>",
   "contributors": ["dongtran"],
@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@antfu/utils": "^9.3.0",
-    "@dongtran/slidev-types": "^1.0.1",
+    "@dongtran/slidev-types": "^1.1.0",
     "yaml": "^2.8.2"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@dongtran/hedgedoc-markdown-it-plugins",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Patched version of @hedgedoc/markdown-it-plugins for markdown-it v14",
   "type": "module",
   "main": "./dist/index.js",
