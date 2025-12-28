@@ -4,136 +4,37 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'packages/types/**'
-      - 'packages/parser/**'
-      - 'packages/client/**'
-      - 'packages/slidev/**'
-      - 'packages/hedgedoc-markdown-it-plugins-patched/**'
   workflow_dispatch:
-    inputs:
-      publish_all:
-        description: 'Publish all packages'
-        type: boolean
-        default: true
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  check-changes:
+  publish:
     runs-on: ubuntu-latest
-    outputs:
-      types: ${{ steps.filter.outputs.types || github.event.inputs.publish_all }}
-      parser: ${{ steps.filter.outputs.parser || github.event.inputs.publish_all }}
-      client: ${{ steps.filter.outputs.client || github.event.inputs.publish_all }}
-      cli: ${{ steps.filter.outputs.cli || github.event.inputs.publish_all }}
-      hedgedoc: ${{ steps.filter.outputs.hedgedoc || github.event.inputs.publish_all }}
     steps:
       - uses: actions/checkout@v4
-      - uses: dorny/paths-filter@v3
-        id: filter
-        if: github.event_name == 'push'
         with:
-          filters: |
-            types:
-              - 'packages/types/**'
-            parser:
-              - 'packages/parser/**'
-            client:
-              - 'packages/client/**'
-            cli:
-              - 'packages/slidev/**'
-            hedgedoc:
-              - 'packages/hedgedoc-markdown-it-plugins-patched/**'
+          fetch-depth: 0
 
-  publish-types:
-    needs: check-changes
-    if: needs.check-changes.outputs.types == 'true'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org'
+
       - uses: pnpm/action-setup@v4
+
       - name: Install dependencies
         run: pnpm install
-      - name: Build types
-        run: pnpm --filter @dongtran/slidev-types build
-      - name: Publish types
-        run: pnpm --filter @dongtran/slidev-types publish --access public --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-  publish-parser:
-    needs: [check-changes, publish-types]
-    if: always() && needs.check-changes.outputs.parser == 'true' && (needs.publish-types.result == 'success' || needs.publish-types.result == 'skipped')
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Create Release Pull Request or Publish
+        id: changesets
+        uses: changesets/action@v1
         with:
-          node-version: '20'
-          registry-url: 'https://registry.npmjs.org'
-      - uses: pnpm/action-setup@v4
-      - name: Install dependencies
-        run: pnpm install
-      - name: Build parser
-        run: pnpm --filter @dongtran/slidev-parser build
-      - name: Publish parser
-        run: pnpm --filter @dongtran/slidev-parser publish --access public --no-git-checks
+          publish: pnpm run publish-packages
+          version: pnpm run version-packages
+          title: 'chore: release packages'
+          commit: 'chore: release packages'
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-  publish-hedgedoc:
-    needs: check-changes
-    if: needs.check-changes.outputs.hedgedoc == 'true'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          registry-url: 'https://registry.npmjs.org'
-      - name: Publish hedgedoc
-        working-directory: packages/hedgedoc-markdown-it-plugins-patched
-        run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-  publish-client:
-    needs: [check-changes, publish-types, publish-parser]
-    if: always() && needs.check-changes.outputs.client == 'true' && (needs.publish-parser.result == 'success' || needs.publish-parser.result == 'skipped')
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          registry-url: 'https://registry.npmjs.org'
-      - uses: pnpm/action-setup@v4
-      - name: Install dependencies
-        run: pnpm install
-      - name: Publish client
-        run: pnpm --filter @dongtran/slidev-client publish --access public --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-  publish-cli:
-    needs: [check-changes, publish-types, publish-parser, publish-client, publish-hedgedoc]
-    if: always() && needs.check-changes.outputs.cli == 'true' && (needs.publish-client.result == 'success' || needs.publish-client.result == 'skipped')
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          registry-url: 'https://registry.npmjs.org'
-      - uses: pnpm/action-setup@v4
-      - name: Install dependencies
-        run: pnpm install
-      - name: Build CLI
-        run: pnpm --filter @dongtran/slidev-cli build
-      - name: Publish CLI
-        run: pnpm --filter @dongtran/slidev-cli publish --access public --no-git-checks
-        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

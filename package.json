@@ -8,6 +8,9 @@
   },
   "scripts": {
     "build": "pnpm -r --filter=\"./packages/**\" --parallel run build",
+    "publish-packages": "pnpm -r --filter \"@dongtran/*\" publish --access public --no-git-checks",
+    "version-packages": "changeset version",
+    "changeset": "changeset",
     "ci:publish": "zx scripts/publish.mjs",
     "cy": "cypress open",
     "cy:fixture": "pnpm -C cypress/fixtures/basic run dev",
@@ -28,6 +31,7 @@
     "prepare": "simple-git-hooks"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.27.0",
     "@antfu/eslint-config": "catalog:dev",
     "@antfu/ni": "catalog:prod",
     "@antfu/utils": "catalog:frontend",
