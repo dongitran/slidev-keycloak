@@ -22,11 +22,8 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - uses: pnpm/action-setup@v4
-
-      - name: Configure pnpm
-        run: |
-          echo "trust-downgrade-risk=ignore" >> ~/.npmrc
-          echo "package-manager-strict=false" >> ~/.npmrc
+        with:
+          version: 9
 
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
