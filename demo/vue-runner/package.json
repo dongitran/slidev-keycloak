@@ -1,4 +1,5 @@
 {
+  "name": "demo-vue-runner",
   "private": true,
   "scripts": {
     "build": "slidev build",
