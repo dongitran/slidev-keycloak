@@ -1,4 +1,4 @@
-import type { FrontmatterStyle, SlidevDetectedFeatures, SlidevMarkdown, SlidevPreparserExtension, SourceSlideInfo } from '@slidev/types'
+import type { FrontmatterStyle, SlidevDetectedFeatures, SlidevMarkdown, SlidevPreparserExtension, SourceSlideInfo } from '@dongtran/slidev-types'
 import { ensurePrefix } from '@antfu/utils'
 import YAML from 'yaml'
 

@@ -1,4 +1,4 @@
-import type { ClicksElement, RawAtValue } from '@slidev/types'
+import type { ClicksElement, RawAtValue } from '@dongtran/slidev-types'
 import type { App, DirectiveBinding } from 'vue'
 import { computed, watchEffect } from 'vue'
 import {

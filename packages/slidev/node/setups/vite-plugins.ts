@@ -1,4 +1,4 @@
-import type { ResolvedSlidevOptions, VitePluginsSetup } from '@slidev/types'
+import type { ResolvedSlidevOptions, VitePluginsSetup } from '@dongtran/slidev-types'
 import type { PluginOption } from 'vite'
 import { loadSetups } from './load'
 

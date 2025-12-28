@@ -1,4 +1,4 @@
-/// <reference types="@slidev/types/client" />
+/// <reference types="@dongtran/slidev-types/client" />
 
 import { createApp } from 'vue'
 import App from './App.vue'

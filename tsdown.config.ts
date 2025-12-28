@@ -10,5 +10,8 @@ export default defineConfig({
   shims: false,
   external: [
     /@slidev/,
+    /@dongtran\/slidev/,
+    /^markdown-it/,
+    /@dongtran\/hedgedoc-markdown-it-plugins/,
   ],
 })

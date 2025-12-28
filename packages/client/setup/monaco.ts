@@ -1,4 +1,4 @@
-import type { MonacoSetupReturn } from '@slidev/types'
+import type { MonacoSetupReturn } from '@dongtran/slidev-types'
 import configs from '#slidev/configs'
 import setups from '#slidev/setups/monaco'
 import { createSingletonPromise } from '@antfu/utils'

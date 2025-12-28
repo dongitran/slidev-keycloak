@@ -1,4 +1,4 @@
-import type { ResolvedFontOptions, SourceSlideInfo } from '@slidev/types'
+import type { ResolvedFontOptions, SourceSlideInfo } from '@dongtran/slidev-types'
 import type MarkdownIt from 'markdown-it'
 import type { Connect, GeneralImportGlobOptions } from 'vite'
 import { relative } from 'node:path'

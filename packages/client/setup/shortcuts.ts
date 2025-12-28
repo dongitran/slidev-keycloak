@@ -1,4 +1,4 @@
-import type { NavOperations, ShortcutOptions } from '@slidev/types'
+import type { NavOperations, ShortcutOptions } from '@dongtran/slidev-types'
 import setups from '#slidev/setups/shortcuts'
 import { and, not, or } from '@vueuse/math'
 import { useDrawings } from '../composables/useDrawings'

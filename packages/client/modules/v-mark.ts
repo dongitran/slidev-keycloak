@@ -1,5 +1,5 @@
 import type { RoughAnnotationConfig } from '@slidev/rough-notation'
-import type { RawAtValue } from '@slidev/types'
+import type { RawAtValue } from '@dongtran/slidev-types'
 import type { App } from 'vue'
 import { annotate } from '@slidev/rough-notation'
 import { computed, watchEffect } from 'vue'

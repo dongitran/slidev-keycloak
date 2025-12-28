@@ -5,8 +5,8 @@ const vitefuMocks = vi.hoisted(() => {
   const FAKE_ROOT = '/user/project'
   return {
     findDepPkgJsonPath: vi.fn((name: string) => {
-      if (name === '@slidev/client')
-        return `${FAKE_ROOT}/node_modules/@slidev/client/package.json`
+      if (name === '@dongtran/slidev-client')
+        return `${FAKE_ROOT}/node_modules/@dongtran/slidev-client/package.json`
       if (name === '@slidev/theme-official')
         return `${FAKE_ROOT}/node_modules/@slidev/theme-official/package.json`
       if (name === 'slidev-theme-xyz')

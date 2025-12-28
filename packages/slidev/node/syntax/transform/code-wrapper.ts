@@ -1,4 +1,4 @@
-import type { MarkdownTransformContext } from '@slidev/types'
+import type { MarkdownTransformContext } from '@dongtran/slidev-types'
 import { normalizeRangeStr } from './utils'
 
 // eslint-disable-next-line regexp/no-super-linear-backtracking

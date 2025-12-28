@@ -1,4 +1,4 @@
-import type { KatexSetup } from '@slidev/types'
+import type { KatexSetup } from '@dongtran/slidev-types'
 import type { KatexOptions } from 'katex'
 import { loadSetups } from './load'
 

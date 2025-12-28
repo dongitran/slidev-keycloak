@@ -1,4 +1,4 @@
-import type { SlideRoute } from '@slidev/types'
+import type { SlideRoute } from '@dongtran/slidev-types'
 import type { TransitionGroupProps } from 'vue'
 import { configs } from '../env'
 

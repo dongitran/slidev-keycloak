@@ -1,7 +1,7 @@
-import type { ResolvedSlidevOptions } from '@slidev/types'
+import type { ResolvedSlidevOptions } from '@dongtran/slidev-types'
 import type MagicString from 'magic-string'
 import type { MarkdownItAsync } from 'markdown-it-async'
-import { taskLists as MarkdownItTaskList } from '@hedgedoc/markdown-it-plugins'
+import { taskLists as MarkdownItTaskList } from '@dongtran/hedgedoc-markdown-it-plugins'
 // @ts-expect-error missing types
 import MarkdownItFootnote from 'markdown-it-footnote'
 import MarkdownItMdc from 'markdown-it-mdc'

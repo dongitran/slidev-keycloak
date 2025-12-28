@@ -1,4 +1,4 @@
-import type { ClicksContext, NormalizedRangeClickValue, NormalizedSingleClickValue, RawAtValue, RawSingleAtValue, SlideRoute } from '@slidev/types'
+import type { ClicksContext, NormalizedRangeClickValue, NormalizedSingleClickValue, RawAtValue, RawSingleAtValue, SlideRoute } from '@dongtran/slidev-types'
 import type { MaybeRefOrGetter, Ref } from 'vue'
 import { clamp, sum } from '@antfu/utils'
 import { computed, isReadonly, onMounted, onUnmounted, ref, shallowReactive, toValue, watch } from 'vue'

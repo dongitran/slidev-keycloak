@@ -1,4 +1,4 @@
-import type { ResolvedSlidevOptions, ResolvedSlidevUtils, SlidevData, SlidevEntryOptions } from '@slidev/types'
+import type { ResolvedSlidevOptions, ResolvedSlidevUtils, SlidevData, SlidevEntryOptions } from '@dongtran/slidev-types'
 import path from 'node:path'
 import { objectMap, uniq } from '@antfu/utils'
 import fg from 'fast-glob'

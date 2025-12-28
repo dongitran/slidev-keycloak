@@ -1,4 +1,4 @@
-import type { TransformersSetup, TransformersSetupReturn } from '@slidev/types'
+import type { TransformersSetup, TransformersSetupReturn } from '@dongtran/slidev-types'
 import { loadSetups } from './load'
 
 export default async function setupTransformers(roots: string[]) {

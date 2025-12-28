@@ -1,4 +1,4 @@
-import type { MarkdownTransformContext } from '@slidev/types'
+import type { MarkdownTransformContext } from '@dongtran/slidev-types'
 import { getCodeBlocks, getCommentBlocks } from './utils'
 
 export function transformSlotSugar(

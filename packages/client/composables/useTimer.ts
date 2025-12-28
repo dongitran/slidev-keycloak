@@ -1,4 +1,4 @@
-import { parseTimeString } from '@slidev/parser/utils'
+import { parseTimeString } from '@dongtran/slidev-parser/utils'
 import { useInterval } from '@vueuse/core'
 import { computed, toRef } from 'vue'
 import { configs } from '../env'

@@ -1,4 +1,4 @@
-import type { MarkdownTransformContext } from '@slidev/types'
+import type { MarkdownTransformContext } from '@dongtran/slidev-types'
 import { encode as encodePlantUml } from 'plantuml-encoder'
 
 export function transformPlantUml(ctx: MarkdownTransformContext) {

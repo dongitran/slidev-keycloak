@@ -1,4 +1,4 @@
-import type { ResolvedSlidevOptions } from '@slidev/types'
+import type { ResolvedSlidevOptions } from '@dongtran/slidev-types'
 import type { Plugin } from 'vite'
 import { bold, gray, red, yellow } from 'ansis'
 import { toAtFS } from '../resolver'

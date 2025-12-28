@@ -1,4 +1,4 @@
-import type { MarkdownTransformContext, ResolvedSlidevOptions, SlidevPluginOptions } from '@slidev/types'
+import type { MarkdownTransformContext, ResolvedSlidevOptions, SlidevPluginOptions } from '@dongtran/slidev-types'
 import type { Plugin } from 'vite'
 import MagicString from 'magic-string-stack'
 import Markdown from 'unplugin-vue-markdown/vite'

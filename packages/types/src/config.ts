@@ -1,11 +1,12 @@
 import type { ExportArgs } from './cli'
-import type { HeadmatterConfig } from './frontmatter'
+import type { HeadmatterConfig, KeycloakConfig } from './frontmatter'
 
 export interface ResolvedSlidevConfigSub {
   export: ResolvedExportOptions
   drawings: ResolvedDrawingsOptions
   fonts: ResolvedFontOptions
   aspectRatio: number
+  keycloak?: KeycloakConfig
 }
 
 export interface SlidevConfig extends

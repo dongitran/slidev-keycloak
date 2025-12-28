@@ -1,4 +1,4 @@
-import type { ResolvedSlidevOptions, SlidevPluginOptions } from '@slidev/types'
+import type { ResolvedSlidevOptions, SlidevPluginOptions } from '@dongtran/slidev-types'
 
 export async function createInspectPlugin(
   options: ResolvedSlidevOptions,

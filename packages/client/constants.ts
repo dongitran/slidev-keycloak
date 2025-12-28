@@ -1,4 +1,4 @@
-import type { ClicksContext, RenderContext, SlideRoute } from '@slidev/types'
+import type { ClicksContext, RenderContext, SlideRoute } from '@dongtran/slidev-types'
 import type { ComputedRef, InjectionKey, Ref, UnwrapNestedRefs } from 'vue'
 import type { SlidevContext } from './modules/context'
 

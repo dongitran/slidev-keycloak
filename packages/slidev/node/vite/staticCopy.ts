@@ -1,4 +1,4 @@
-import type { ResolvedSlidevOptions, SlidevPluginOptions } from '@slidev/types'
+import type { ResolvedSlidevOptions, SlidevPluginOptions } from '@dongtran/slidev-types'
 import { existsSync } from 'node:fs'
 import { join } from 'node:path'
 

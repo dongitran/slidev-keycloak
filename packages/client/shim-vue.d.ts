@@ -17,7 +17,7 @@ declare module 'vue-router' {
     preload?: boolean
 
     // slide info
-    slide?: Omit<import('@slidev/types').SlideInfo, 'source'> & {
+    slide?: Omit<import('@dongtran/slidev-types').SlideInfo, 'source'> & {
       noteHTML: string
       filepath: string
       start: number
@@ -26,7 +26,7 @@ declare module 'vue-router' {
     }
 
     // private fields
-    __clicksContext: import('@slidev/types').ClicksContext | null
+    __clicksContext: import('@dongtran/slidev-types').ClicksContext | null
     __preloaded?: boolean
   }
 }

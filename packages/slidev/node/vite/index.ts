@@ -1,4 +1,4 @@
-import type { ResolvedSlidevOptions, SlidevPluginOptions, SlidevServerOptions } from '@slidev/types'
+import type { ResolvedSlidevOptions, SlidevPluginOptions, SlidevServerOptions } from '@dongtran/slidev-types'
 import type { PluginOption } from 'vite'
 import setupVitePlugins from '../setups/vite-plugins'
 import { createVueCompilerFlagsPlugin } from './compilerFlagsVue'

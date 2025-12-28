@@ -1,4 +1,4 @@
-import type { BuildArgs, ResolvedSlidevOptions } from '@slidev/types'
+import type { BuildArgs, ResolvedSlidevOptions } from '@dongtran/slidev-types'
 import type { InlineConfig, ResolvedConfig } from 'vite'
 import { existsSync } from 'node:fs'
 import fs from 'node:fs/promises'

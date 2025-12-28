@@ -1,5 +1,5 @@
 import type { Awaitable } from '@antfu/utils'
-import type { ResolvedSlidevOptions } from '@slidev/types'
+import type { ResolvedSlidevOptions } from '@dongtran/slidev-types'
 import type { PluginContext } from 'rollup'
 
 export interface VirtualModuleTemplate {

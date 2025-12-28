@@ -1,4 +1,4 @@
-import type { SlideInfo, SlidePatch } from '@slidev/types'
+import type { SlideInfo, SlidePatch } from '@dongtran/slidev-types'
 import type { MaybeRef } from '@vueuse/core'
 import type { Ref } from 'vue'
 import { useFetch } from '@vueuse/core'

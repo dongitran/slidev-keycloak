@@ -1,4 +1,4 @@
-import type { MarkdownTransformContext } from '@slidev/types'
+import type { MarkdownTransformContext } from '@dongtran/slidev-types'
 import lz from 'lz-string'
 import { toKeyedTokens } from 'shiki-magic-move/core'
 import { reCodeBlock } from './code-wrapper'

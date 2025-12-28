@@ -1,4 +1,4 @@
-import type { DrawingsOptions, FontOptions, ResolvedDrawingsOptions, ResolvedExportOptions, ResolvedFontOptions, SlidevConfig, SlidevThemeMeta } from '@slidev/types'
+import type { DrawingsOptions, FontOptions, KeycloakConfig, ResolvedDrawingsOptions, ResolvedExportOptions, ResolvedFontOptions, SlidevConfig, SlidevThemeMeta } from '@dongtran/slidev-types'
 import { toArray, uniq } from '@antfu/utils'
 import { parseAspectRatio } from './utils'
 
@@ -51,6 +51,7 @@ export function getDefaultConfig(): SlidevConfig {
     duration: '30min',
     timer: 'stopwatch',
     magicMoveDuration: 800,
+    keycloak: undefined,
   }
 }
 

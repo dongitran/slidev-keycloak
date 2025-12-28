@@ -1,4 +1,4 @@
-import { parseRangeString } from '@slidev/parser/core'
+import { parseRangeString } from '@dongtran/slidev-parser/core'
 
 export function makeId(length = 5) {
   const result = []

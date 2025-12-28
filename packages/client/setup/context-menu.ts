@@ -1,6 +1,6 @@
 /// <reference types="unplugin-icons/types/vue3" />
 
-import type { ContextMenuItem } from '@slidev/types'
+import type { ContextMenuItem } from '@dongtran/slidev-types'
 import type { ComputedRef } from 'vue'
 import setups from '#slidev/setups/context-menu'
 import { computed } from 'vue'

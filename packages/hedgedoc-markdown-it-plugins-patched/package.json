@@ -1,0 +1,20 @@
+{
+  "name": "@dongtran/hedgedoc-markdown-it-plugins",
+  "version": "1.0.0",
+  "description": "Patched version of @hedgedoc/markdown-it-plugins for markdown-it v14",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "markdown-it": "^14.0.0"
+  },
+  "peerDependencies": {
+    "markdown-it": "^14.0.0"
+  }
+}

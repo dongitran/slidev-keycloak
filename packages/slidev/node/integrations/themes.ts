@@ -1,4 +1,4 @@
-import type { SlidevThemeMeta } from '@slidev/types'
+import type { SlidevThemeMeta } from '@dongtran/slidev-types'
 import { existsSync } from 'node:fs'
 import fs from 'node:fs/promises'
 import { join } from 'node:path'

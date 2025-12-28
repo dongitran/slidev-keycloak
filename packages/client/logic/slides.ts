@@ -1,4 +1,4 @@
-import type { SlideRoute } from '@slidev/types'
+import type { SlideRoute } from '@dongtran/slidev-types'
 import { slides } from '#slidev/slides'
 import { computed, watch, watchEffect } from 'vue'
 import { useNav } from '../composables/useNav'

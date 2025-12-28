@@ -1,6 +1,6 @@
 // This module also runs in the Node.js environment
 
-import type { ResolvedSlidevUtils, ShikiContext, ShikiSetupReturn } from '@slidev/types'
+import type { ResolvedSlidevUtils, ShikiContext, ShikiSetupReturn } from '@dongtran/slidev-types'
 import type { LanguageInput, ThemeInput, ThemeRegistrationAny } from 'shiki'
 import { objectMap } from '@antfu/utils'
 import { red, yellow } from 'ansis'

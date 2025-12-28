@@ -1,4 +1,4 @@
-import type { ShortcutOptions } from '@slidev/types'
+import type { ShortcutOptions } from '@dongtran/slidev-types'
 import type { Fn, KeyFilter } from '@vueuse/core'
 import type { Ref } from 'vue'
 import { onKeyStroke } from '@vueuse/core'

@@ -551,6 +551,11 @@
           "markdownDescription": "Duration for shiki magic move transitions in milliseconds",
           "default": 800
         },
+        "keycloak": {
+          "$ref": "#/definitions/KeycloakConfig",
+          "description": "Keycloak authentication configuration\n\nEnable authentication by adding keycloak config:",
+          "markdownDescription": "Keycloak authentication configuration\n\nEnable authentication by adding keycloak config:"
+        },
         "defaults": {
           "$ref": "#/definitions/Frontmatter",
           "description": "Default frontmatter options applied to all slides",
@@ -886,6 +891,59 @@
       },
       "description": "The following type should map to unhead MataFlat type",
       "markdownDescription": "The following type should map to unhead MataFlat type"
+    },
+    "KeycloakConfig": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "Keycloak server URL",
+          "markdownDescription": "Keycloak server URL",
+          "examples": [
+            "https://keycloak.example.com"
+          ]
+        },
+        "realm": {
+          "type": "string",
+          "description": "Keycloak realm name",
+          "markdownDescription": "Keycloak realm name"
+        },
+        "clientId": {
+          "type": "string",
+          "description": "Keycloak client ID",
+          "markdownDescription": "Keycloak client ID"
+        },
+        "onLoad": {
+          "type": "string",
+          "enum": [
+            "login-required",
+            "check-sso"
+          ],
+          "description": "Authentication mode",
+          "markdownDescription": "Authentication mode",
+          "default": "login-required"
+        },
+        "pkceMethod": {
+          "type": "string",
+          "const": "S256",
+          "description": "PKCE method for enhanced security",
+          "markdownDescription": "PKCE method for enhanced security",
+          "default": "S256"
+        },
+        "checkLoginIframe": {
+          "type": "boolean",
+          "description": "Disable login iframe check",
+          "markdownDescription": "Disable login iframe check",
+          "default": false
+        }
+      },
+      "required": [
+        "url",
+        "realm",
+        "clientId"
+      ],
+      "description": "Keycloak authentication configuration",
+      "markdownDescription": "Keycloak authentication configuration"
     },
     "Frontmatter": {
       "type": "object",

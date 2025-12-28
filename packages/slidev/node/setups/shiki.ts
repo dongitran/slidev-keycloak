@@ -1,4 +1,4 @@
-import type { ResolvedSlidevUtils, ShikiSetup } from '@slidev/types'
+import type { ResolvedSlidevUtils, ShikiSetup } from '@dongtran/slidev-types'
 import fs from 'node:fs/promises'
 import { createdBundledHighlighter, createSingletonShorthands } from 'shiki/core'
 import { createJavaScriptRegexEngine } from 'shiki/engine/javascript'

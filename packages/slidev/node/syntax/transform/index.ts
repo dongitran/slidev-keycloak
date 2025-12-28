@@ -1,4 +1,4 @@
-import type { MarkdownTransformer, ResolvedSlidevOptions } from '@slidev/types'
+import type { MarkdownTransformer, ResolvedSlidevOptions } from '@dongtran/slidev-types'
 import setupTransformers from '../../setups/transformers'
 import { transformCodeWrapper } from './code-wrapper'
 import { transformPageCSS } from './in-page-css'

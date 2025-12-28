@@ -1,4 +1,4 @@
-import type { ClicksInfo } from '@slidev/types'
+import type { ClicksInfo } from '@dongtran/slidev-types'
 import type { App, ObjectDirective } from 'vue'
 import { MotionDirective } from '@vueuse/motion'
 import { watch } from 'vue'

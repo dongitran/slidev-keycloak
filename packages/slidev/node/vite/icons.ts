@@ -1,4 +1,4 @@
-import type { ResolvedSlidevOptions, SlidevPluginOptions } from '@slidev/types'
+import type { ResolvedSlidevOptions, SlidevPluginOptions } from '@dongtran/slidev-types'
 import Icons from 'unplugin-icons/vite'
 
 export function createIconsPlugin(

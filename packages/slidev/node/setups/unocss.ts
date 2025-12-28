@@ -1,4 +1,4 @@
-import type { ResolvedSlidevOptions, UnoSetup } from '@slidev/types'
+import type { ResolvedSlidevOptions, UnoSetup } from '@dongtran/slidev-types'
 import type { UserConfig } from '@unocss/core'
 import type { Theme } from '@unocss/preset-uno'
 import { existsSync } from 'node:fs'

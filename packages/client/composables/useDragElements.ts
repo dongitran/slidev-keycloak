@@ -1,4 +1,4 @@
-import type { SlidePatch } from '@slidev/types'
+import type { SlidePatch } from '@dongtran/slidev-types'
 import type { CSSProperties, DirectiveBinding, InjectionKey, WatchStopHandle } from 'vue'
 import { debounce, ensureSuffix } from '@antfu/utils'
 import { injectLocal, onClickOutside, useWindowFocus } from '@vueuse/core'

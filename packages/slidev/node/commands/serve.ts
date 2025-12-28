@@ -1,4 +1,4 @@
-import type { ResolvedSlidevOptions, SlidevServerOptions } from '@slidev/types'
+import type { ResolvedSlidevOptions, SlidevServerOptions } from '@dongtran/slidev-types'
 import type { InlineConfig } from 'vite'
 import { join } from 'node:path'
 import process from 'node:process'

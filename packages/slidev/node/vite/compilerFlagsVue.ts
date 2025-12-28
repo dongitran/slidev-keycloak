@@ -1,4 +1,4 @@
-import type { ResolvedSlidevOptions } from '@slidev/types'
+import type { ResolvedSlidevOptions } from '@dongtran/slidev-types'
 import type { Plugin } from 'vite'
 import { objectEntries } from '@antfu/utils'
 

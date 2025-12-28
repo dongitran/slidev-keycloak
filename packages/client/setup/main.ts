@@ -1,4 +1,4 @@
-import type { AppContext } from '@slidev/types'
+import type { AppContext } from '@dongtran/slidev-types'
 import type { App } from 'vue'
 import setups from '#slidev/setups/main'
 import TwoSlashFloatingVue from '@shikijs/vitepress-twoslash/client'
@@ -9,10 +9,16 @@ import { createVDragDirective } from '../modules/v-drag'
 import { createVMarkDirective } from '../modules/v-mark'
 import { createVMotionDirectives } from '../modules/v-motion'
 import setupRoutes from '../setup/routes'
+import { setupKeycloak } from './keycloak'
+import { configs } from '../env'
 
 import '#slidev/styles'
 
 export default async function setupMain(app: App) {
+  // Initialize Keycloak authentication if configured
+  if (configs.keycloak) {
+    await setupKeycloak(app, configs.keycloak)
+  }
   function setMaxHeight() {
     // disable the mobile navbar scroll
     // see https://css-tricks.com/the-trick-to-viewport-units-on-mobile/

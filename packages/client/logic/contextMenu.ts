@@ -1,4 +1,4 @@
-import type { ContextMenuItem } from '@slidev/types'
+import type { ContextMenuItem } from '@dongtran/slidev-types'
 import type { ComputedRef } from 'vue'
 import { shallowRef } from 'vue'
 import { useNav } from '../composables/useNav'

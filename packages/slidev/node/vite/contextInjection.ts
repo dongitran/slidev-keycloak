@@ -10,7 +10,7 @@ export function createContextInjectionPlugin(): Plugin {
     transform: {
       // TODO: static filter
       async handler(code, id) {
-        if (!id.endsWith('.vue') || id.includes('/@slidev/client/') || id.includes('/packages/client/'))
+        if (!id.endsWith('.vue') || id.includes('/@dongtran/slidev-client/') || id.includes('/packages/client/'))
           return
         if (code.includes(templateInjectionMarker) || code.includes('useSlideContext()'))
           return code // Assume that the context is already imported and used
@@ -42,7 +42,7 @@ export function createContextInjectionPlugin(): Plugin {
             component = component.slice(0, component.indexOf('</script>'))
 
             const scriptIndex = (matchScripts[0].index || 0) + matchScripts[0][0].length
-            const provideImport = '\nimport { injectionSlidevContext } from "@slidev/client/constants.ts"\n'
+            const provideImport = '\nimport { injectionSlidevContext } from "@dongtran/slidev-client/constants.ts"\n'
             code = `${code.slice(0, scriptIndex)}${provideImport}${code.slice(scriptIndex)}`
 
             let injectIndex = exportIndex + provideImport.length

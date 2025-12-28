@@ -1,4 +1,4 @@
-import type { ResolvedSlidevOptions } from '@slidev/types'
+import type { ResolvedSlidevOptions } from '@dongtran/slidev-types'
 import { existsSync } from 'node:fs'
 import fs from 'node:fs/promises'
 import { dirname, join, resolve } from 'node:path'

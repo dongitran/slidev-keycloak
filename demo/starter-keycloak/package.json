@@ -1,0 +1,16 @@
+{
+  "name": "slidev-keycloak-demo",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "slidev --open",
+    "build": "slidev build",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@dongtran/slidev-cli": "^1.0.7",
+    "@slidev/theme-default": "^0.25.0",
+    "@slidev/theme-seriph": "^0.25.0",
+    "vue": "^3.5.0"
+  }
+}

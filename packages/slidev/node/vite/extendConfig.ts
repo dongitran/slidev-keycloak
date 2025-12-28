@@ -1,4 +1,4 @@
-import type { ResolvedSlidevOptions } from '@slidev/types'
+import type { ResolvedSlidevOptions } from '@dongtran/slidev-types'
 import type { Plugin, UserConfig } from 'vite'
 import { join } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
@@ -17,21 +17,21 @@ const INCLUDE_GLOBAL = [
   'pptxgenjs',
 ]
 
-const INCLUDE_LOCAL = INCLUDE_GLOBAL.map(i => `@slidev/cli > @slidev/client > ${i}`)
+const INCLUDE_LOCAL = INCLUDE_GLOBAL.map(i => `@slidev/cli > @dongtran/slidev-client > ${i}`)
 
 // @keep-sorted
 const EXCLUDE_GLOBAL = [
   '@antfu/utils',
   '@shikijs/monaco',
   '@shikijs/vitepress-twoslash/client',
-  '@slidev/client',
-  '@slidev/client/constants',
-  '@slidev/client/context',
-  '@slidev/client/logic/dark',
-  '@slidev/parser',
-  '@slidev/parser/core',
+  '@dongtran/slidev-client',
+  '@dongtran/slidev-client/constants',
+  '@dongtran/slidev-client/context',
+  '@dongtran/slidev-client/logic/dark',
+  '@dongtran/slidev-parser',
+  '@dongtran/slidev-parser/core',
   '@slidev/rough-notation',
-  '@slidev/types',
+  '@dongtran/slidev-types',
   '@unhead/vue',
   '@unocss/reset',
   '@vueuse/core',

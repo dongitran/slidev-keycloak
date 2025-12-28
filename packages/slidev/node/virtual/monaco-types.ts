@@ -13,7 +13,7 @@ export const templateMonacoTypes: VirtualModuleTemplate = {
       return ''
     const typesRoot = join(userRoot, 'snippets')
     const files = await fg(['**/*.ts', '**/*.mts', '**/*.cts'], { cwd: typesRoot })
-    let result = 'import { addFile } from "@slidev/client/setup/monaco.ts"\n'
+    let result = 'import { addFile } from "@dongtran/slidev-client/setup/monaco.ts"\n'
 
     // User snippets
     for (const file of files) {

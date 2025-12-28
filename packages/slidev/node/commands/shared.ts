@@ -1,4 +1,4 @@
-import type { ResolvedSlidevOptions, SlidevData, SlidevServerOptions } from '@slidev/types'
+import type { ResolvedSlidevOptions, SlidevData, SlidevServerOptions } from '@dongtran/slidev-types'
 import type { ConfigEnv, InlineConfig } from 'vite'
 import MarkdownIt from 'markdown-it'
 import { loadConfigFromFile, mergeConfig } from 'vite'

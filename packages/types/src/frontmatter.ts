@@ -1,6 +1,40 @@
 import type { BuiltinLayouts } from './builtin-layouts'
 import type { SlidevThemeConfig } from './types'
 
+/**
+ * Keycloak authentication configuration
+ */
+export interface KeycloakConfig {
+  /**
+   * Keycloak server URL
+   * @example 'https://keycloak.example.com'
+   */
+  url: string
+  /**
+   * Keycloak realm name
+   */
+  realm: string
+  /**
+   * Keycloak client ID
+   */
+  clientId: string
+  /**
+   * Authentication mode
+   * @default 'login-required'
+   */
+  onLoad?: 'login-required' | 'check-sso'
+  /**
+   * PKCE method for enhanced security
+   * @default 'S256'
+   */
+  pkceMethod?: 'S256'
+  /**
+   * Disable login iframe check
+   * @default false
+   */
+  checkLoginIframe?: boolean
+}
+
 export interface Headmatter extends HeadmatterConfig, Omit<Frontmatter, 'title'> {
   /**
    * Default frontmatter options applied to all slides
@@ -311,6 +345,19 @@ export interface HeadmatterConfig extends TransitionOptions {
    * @default 800
    */
   magicMoveDuration?: number
+  /**
+   * Keycloak authentication configuration
+   * 
+   * Enable authentication by adding keycloak config:
+   * @example
+   * ```yaml
+   * keycloak:
+   *   url: https://keycloak.example.com
+   *   realm: my-realm
+   *   clientId: my-client
+   * ```
+   */
+  keycloak?: KeycloakConfig
 }
 
 export interface Frontmatter extends TransitionOptions {

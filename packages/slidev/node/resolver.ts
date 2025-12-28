@@ -1,4 +1,4 @@
-import type { RootsInfo } from '@slidev/types'
+import type { RootsInfo } from '@dongtran/slidev-types'
 import { existsSync } from 'node:fs'
 import { copyFile, readFile } from 'node:fs/promises'
 import { dirname, join, relative, resolve } from 'node:path'
@@ -238,7 +238,7 @@ export async function getRoots(entry?: string): Promise<RootsInfo> {
   isInstalledGlobally.value
     = slash(relative(userRoot, process.argv[1])).includes('/.pnpm/')
       || (await import('is-installed-globally')).default
-  const clientRoot = await findPkgRoot('@slidev/client', cliRoot, true)
+  const clientRoot = await findPkgRoot('@dongtran/slidev-client', cliRoot, true)
   const closestPkgRoot = dirname(await findClosestPkgJsonPath(userRoot) || userRoot)
   const userPkgJson = await getUserPkgJson(closestPkgRoot)
   const userWorkspaceRoot = await searchForWorkspaceRoot(closestPkgRoot)

@@ -1,4 +1,4 @@
-import type { ResolvedSlidevOptions } from '@slidev/types'
+import type { ResolvedSlidevOptions } from '@dongtran/slidev-types'
 import type { ShikiTransformer } from 'shiki'
 import { isTruthy } from '@antfu/utils'
 import { fromAsyncCodeToHtml } from '@shikijs/markdown-it/async'

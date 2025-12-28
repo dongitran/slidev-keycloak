@@ -1,4 +1,4 @@
-import type { SlideRoute, TocItem } from '@slidev/types'
+import type { SlideRoute, TocItem } from '@dongtran/slidev-types'
 import type { ComputedRef, Ref } from 'vue'
 import { computed } from 'vue'
 import { getSlidePath } from '../logic/slides'

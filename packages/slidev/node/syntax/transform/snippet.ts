@@ -1,6 +1,6 @@
 // Ported from https://github.com/vuejs/vitepress/blob/main/src/node/markdown/plugins/snippet.ts
 
-import type { MarkdownTransformContext } from '@slidev/types'
+import type { MarkdownTransformContext } from '@dongtran/slidev-types'
 import fs from 'node:fs'
 import path from 'node:path'
 import { slash } from '@antfu/utils'

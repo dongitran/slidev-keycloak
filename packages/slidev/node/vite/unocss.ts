@@ -1,4 +1,4 @@
-import type { ResolvedSlidevOptions, SlidevPluginOptions } from '@slidev/types'
+import type { ResolvedSlidevOptions, SlidevPluginOptions } from '@dongtran/slidev-types'
 import UnoCSS from 'unocss/vite'
 import setupUnocss from '../setups/unocss'
 

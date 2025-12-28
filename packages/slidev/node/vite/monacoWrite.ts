@@ -1,4 +1,4 @@
-import type { ResolvedSlidevOptions } from '@slidev/types'
+import type { ResolvedSlidevOptions } from '@dongtran/slidev-types'
 import type { Plugin } from 'vite'
 import fs from 'node:fs/promises'
 import path from 'node:path'

@@ -1,4 +1,4 @@
-import type { ResolvedSlidevOptions, SeoMeta } from '@slidev/types'
+import type { ResolvedSlidevOptions, SeoMeta } from '@dongtran/slidev-types'
 import type { ResolvableLink } from 'unhead/types'
 import { existsSync } from 'node:fs'
 import { readFile } from 'node:fs/promises'

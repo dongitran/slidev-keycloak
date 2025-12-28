@@ -1,4 +1,4 @@
-import type { ResolvedSlidevOptions, SlidevPluginOptions } from '@slidev/types'
+import type { ResolvedSlidevOptions, SlidevPluginOptions } from '@dongtran/slidev-types'
 import type { Plugin } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import VueJsx from '@vitejs/plugin-vue-jsx'

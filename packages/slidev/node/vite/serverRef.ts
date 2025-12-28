@@ -1,4 +1,4 @@
-import type { ResolvedSlidevOptions, SlidevPluginOptions } from '@slidev/types'
+import type { ResolvedSlidevOptions, SlidevPluginOptions } from '@dongtran/slidev-types'
 import ServerRef from 'vite-plugin-vue-server-ref'
 import { loadDrawings, writeDrawings } from '../integrations/drawings'
 import { loadSnapshots, writeSnapshots } from '../integrations/snapshots'

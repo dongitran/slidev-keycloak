@@ -9,7 +9,7 @@ export const templateSlides: VirtualModuleTemplate = {
     const statements = [
       `import { defineAsyncComponent, shallowRef } from 'vue'`,
       `import SlideError from '${layouts.error}'`,
-      `import SlideLoading from '@slidev/client/internals/SlideLoading.vue'`,
+      `import SlideLoading from '@dongtran/slidev-client/internals/SlideLoading.vue'`,
       `const componentsCache = new Array(${data.slides.length})`,
       `const getAsyncComponent = (idx, loader) => defineAsyncComponent({`,
       `  loader,`,
