@@ -10,22 +10,27 @@ on:
       - 'packages/client/**'
       - 'packages/slidev/**'
       - 'packages/hedgedoc-markdown-it-plugins-patched/**'
-      - '.github/workflows/publish.yml'
   workflow_dispatch:
+    inputs:
+      publish_all:
+        description: 'Publish all packages'
+        type: boolean
+        default: true
 
 jobs:
   check-changes:
     runs-on: ubuntu-latest
     outputs:
-      types: ${{ steps.filter.outputs.types }}
-      parser: ${{ steps.filter.outputs.parser }}
-      client: ${{ steps.filter.outputs.client }}
-      cli: ${{ steps.filter.outputs.cli }}
-      hedgedoc: ${{ steps.filter.outputs.hedgedoc }}
+      types: ${{ steps.filter.outputs.types || github.event.inputs.publish_all }}
+      parser: ${{ steps.filter.outputs.parser || github.event.inputs.publish_all }}
+      client: ${{ steps.filter.outputs.client || github.event.inputs.publish_all }}
+      cli: ${{ steps.filter.outputs.cli || github.event.inputs.publish_all }}
+      hedgedoc: ${{ steps.filter.outputs.hedgedoc || github.event.inputs.publish_all }}
     steps:
       - uses: actions/checkout@v4
       - uses: dorny/paths-filter@v3
         id: filter
+        if: github.event_name == 'push'
         with:
           filters: |
             types:
@@ -61,7 +66,7 @@ jobs:
 
   publish-parser:
     needs: [check-changes, publish-types]
-    if: always() && needs.check-changes.outputs.parser == 'true'
+    if: always() && needs.check-changes.outputs.parser == 'true' && (needs.publish-types.result == 'success' || needs.publish-types.result == 'skipped')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -76,24 +81,6 @@ jobs:
         run: pnpm --filter @dongtran/slidev-parser build
       - name: Publish parser
         run: pnpm --filter @dongtran/slidev-parser publish --access public --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-  publish-client:
-    needs: [check-changes, publish-types, publish-parser]
-    if: always() && needs.check-changes.outputs.client == 'true'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          registry-url: 'https://registry.npmjs.org'
-      - uses: pnpm/action-setup@v4
-      - name: Install dependencies
-        run: pnpm install
-      - name: Publish client
-        run: pnpm --filter @dongtran/slidev-client publish --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -113,9 +100,27 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+  publish-client:
+    needs: [check-changes, publish-types, publish-parser]
+    if: always() && needs.check-changes.outputs.client == 'true' && (needs.publish-parser.result == 'success' || needs.publish-parser.result == 'skipped')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+      - uses: pnpm/action-setup@v4
+      - name: Install dependencies
+        run: pnpm install
+      - name: Publish client
+        run: pnpm --filter @dongtran/slidev-client publish --access public --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
   publish-cli:
     needs: [check-changes, publish-types, publish-parser, publish-client, publish-hedgedoc]
-    if: always() && needs.check-changes.outputs.cli == 'true'
+    if: always() && needs.check-changes.outputs.cli == 'true' && (needs.publish-client.result == 'success' || needs.publish-client.result == 'skipped')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
