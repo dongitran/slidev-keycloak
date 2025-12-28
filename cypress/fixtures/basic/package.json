@@ -6,7 +6,7 @@
     "export": "slidev export"
   },
   "devDependencies": {
-    "@slidev/cli": "workspace:*",
+    "@dongtran/slidev-cli": "workspace:*",
     "@slidev/theme-default": "catalog:themes",
     "@slidev/theme-seriph": "catalog:themes",
     "@slidev/types": "workspace:*",

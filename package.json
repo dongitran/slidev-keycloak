@@ -37,7 +37,7 @@
     "@antfu/utils": "catalog:frontend",
     "@rolldown/binding-darwin-arm64": "1.0.0-beta.57",
     "@shikijs/markdown-it": "catalog:frontend",
-    "@slidev/cli": "workspace:*",
+    "@dongtran/slidev-cli": "workspace:*",
     "@slidev/parser": "workspace:*",
     "@slidev/types": "workspace:*",
     "@types/cli-progress": "catalog:types",
