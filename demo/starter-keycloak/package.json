@@ -8,7 +8,7 @@
     "export": "slidev export"
   },
   "dependencies": {
-    "@dongtran/slidev-cli": "^1.1.0",
+    "@dongtran/slidev-cli": "^1.0.0",
     "@slidev/theme-default": "^0.25.0",
     "@slidev/theme-seriph": "^0.25.0",
     "vue": "^3.5.0"

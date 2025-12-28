@@ -9,7 +9,7 @@
     "@dongtran/slidev-cli": "workspace:*",
     "@slidev/theme-default": "catalog:themes",
     "@slidev/theme-seriph": "catalog:themes",
-    "@slidev/types": "workspace:*",
+    "@dongtran/slidev-types": "workspace:*",
     "nodemon": "catalog:dev"
   }
 }

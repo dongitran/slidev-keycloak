@@ -9,7 +9,7 @@
   "homepage": "https://sli.dev",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dongtran/slidev-keycloak"
+    "url": "https://github.com/dongitran/slidev-keycloak"
   },
   "exports": {
     ".": "./index.ts",
@@ -34,9 +34,9 @@
     "@shikijs/engine-javascript": "^3.20.0",
     "@shikijs/monaco": "^3.20.0",
     "@shikijs/vitepress-twoslash": "^3.20.0",
-    "@dongtran/slidev-parser": "^1.1.0",
+    "@dongtran/slidev-parser": "workspace:*",
     "@slidev/rough-notation": "^0.1.0",
-    "@dongtran/slidev-types": "^1.1.0",
+    "@dongtran/slidev-types": "workspace:*",
     "@typescript/ata": "^0.9.8",
     "@unhead/vue": "^2.0.19",
     "@unocss/reset": "^66.5.10",

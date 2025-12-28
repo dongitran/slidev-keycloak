@@ -9,9 +9,9 @@
   "homepage": "https://sli.dev",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dongtran/slidev-keycloak"
+    "url": "https://github.com/dongitran/slidev-keycloak"
   },
-  "bugs": "https://github.com/dongtran/slidev-keycloak/issues",
+  "bugs": "https://github.com/dongitran/slidev-keycloak/issues",
   "main": "index.mjs",
   "bin": {
     "create-slidev-theme": "index.mjs"

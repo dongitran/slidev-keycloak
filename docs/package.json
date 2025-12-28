@@ -1,5 +1,5 @@
 {
-  "name": "@slidev/docs",
+  "name": "@dongtran/slidev-docs",
   "type": "module",
   "version": "52.11.1",
   "license": "MIT",
@@ -7,10 +7,10 @@
   "homepage": "https://sli.dev",
   "repository": {
     "type": "git",
-    "url": "https://github.com/slidevjs/slidev",
+    "url": "https://github.com/dongitran/slidev-keycloak",
     "directory": "docs"
   },
-  "bugs": "https://github.com/slidevjs/slidev/issues",
+  "bugs": "https://github.com/dongitran/slidev-keycloak/issues",
   "files": [
     "**/*.md",
     "!.vitepress/**"
@@ -24,9 +24,9 @@
     "@antfu/utils": "catalog:frontend",
     "@iconify/json": "catalog:icons",
     "@shikijs/vitepress-twoslash": "catalog:prod",
-    "@slidev/client": "workspace:*",
-    "@slidev/parser": "workspace:*",
-    "@slidev/types": "workspace:*",
+    "@dongtran/slidev-client": "workspace:*",
+    "@dongtran/slidev-parser": "workspace:*",
+    "@dongtran/slidev-types": "workspace:*",
     "@types/node": "catalog:types",
     "@unocss/reset": "catalog:frontend",
     "@vueuse/core": "catalog:frontend",

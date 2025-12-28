@@ -10,7 +10,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dongtran/slidev-keycloak"
+    "url": "https://github.com/dongitran/slidev-keycloak"
   },
   "categories": [
     "Other"
@@ -600,8 +600,8 @@
   },
   "devDependencies": {
     "@antfu/utils": "catalog:frontend",
-    "@slidev/parser": "workspace:*",
-    "@slidev/types": "workspace:*",
+    "@dongtran/slidev-parser": "workspace:*",
+    "@dongtran/slidev-types": "workspace:*",
     "@types/node": "catalog:types",
     "@types/vscode": "^1.99.0",
     "@volar/language-server": "catalog:vscode",
