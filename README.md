@@ -6,28 +6,54 @@
 </p>
 
 <p align="center">
-Presentation <b>slide</b>s for <b>dev</b>elopers 🧑‍💻👩‍💻👨‍💻
+Presentation <b>slide</b>s for <b>dev</b>elopers with <b>Keycloak Authentication</b> 🔐🧑‍💻
 </p>
 
 <p align="center">
-<a href="https://www.npmjs.com/package/@slidev/cli" target="__blank"><img src="https://img.shields.io/npm/v/@slidev/cli?color=2B90B6&label=" alt="NPM version"></a>
-<a href="https://www.npmjs.com/package/@slidev/cli" target="__blank"><img alt="NPM Downloads" src="https://img.shields.io/npm/dm/@slidev/cli?color=349dbe&label="></a>
-<a href="https://sli.dev/" target="__blank"><img src="https://img.shields.io/static/v1?label=&message=docs%20%26%20demos&color=45b8cd" alt="Docs & Demos"></a>
-<a href="https://sli.dev/resources/theme-gallery" target="__blank"><img src="https://img.shields.io/static/v1?label=&message=themes&color=4ec5d4" alt="Themes"></a>
-<br>
-<a href="https://github.com/slidevjs/slidev/stargazers" target="__blank"><img alt="GitHub stars" src="https://img.shields.io/github/stars/slidevjs/slidev?style=social"></a>
+<a href="https://www.npmjs.com/package/@dongtran/slidev-cli" target="__blank"><img src="https://img.shields.io/npm/v/@dongtran/slidev-cli?color=2B90B6&label=" alt="NPM version"></a>
 </p>
 
+> **Note**: This project is based on [Slidev](https://github.com/slidevjs/slidev) by [Anthony Fu](https://github.com/antfu). 
+> It adds built-in Keycloak authentication support for protecting presentations.
+
 <p align="center">
-  <a href="https://twitter.com/antfu7/status/1389604687502995457">Video Preview</a> | <a href="https://sli.dev">Documentation</a>
+  <a href="https://sli.dev">Slidev Documentation</a> | <a href="#keycloak-authentication">Keycloak Setup</a>
 </p>
+
+## Keycloak Authentication
+
+Enable Keycloak authentication by adding config to your `slides.md` frontmatter:
+
+```yaml
+---
+title: My Protected Presentation
+keycloak:
+  url: https://keycloak.example.com
+  realm: my-realm
+  clientId: my-client
+---
+```
+
+## Installation
+
+```bash
+npm install @dongtran/slidev-cli
+```
+
+## Credits
+
+This project is a fork of [Slidev](https://github.com/slidevjs/slidev) - Presentation Slides for Developers by [Anthony Fu](https://github.com/antfu).
+
+Licensed under [MIT License](./LICENSE).
+
+---
 
 <div align="center">
 <table>
 <tbody>
 <td align="center">
 <img width="2000" height="0" alt="" aria-hidden><br>
-<sub>Made possible by my <a href="https://github.com/sponsors/antfu">Sponsor Program 💖</a></sub><br>
+<sub>Original Slidev made possible by <a href="https://github.com/sponsors/antfu">Anthony Fu's Sponsor Program 💖</a></sub><br>
 <img width="2000" height="0" alt="" aria-hidden>
 </td>
 </tbody>
