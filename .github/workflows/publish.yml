@@ -24,9 +24,7 @@ jobs:
       - uses: pnpm/action-setup@v4
 
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
-        env:
-          npm_config_ignore_trust_checks: true
+        run: pnpm install --no-frozen-lockfile --config.ignore-trust-checks=true
 
       - name: Create Release Pull Request or Publish
         id: changesets
