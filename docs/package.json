@@ -2,6 +2,7 @@
   "name": "@dongtran/slidev-docs",
   "type": "module",
   "version": "52.11.1",
+  "private": true,
   "license": "MIT",
   "funding": "https://github.com/sponsors/antfu",
   "homepage": "https://sli.dev",
